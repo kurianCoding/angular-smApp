@@ -1,0 +1,31 @@
+{
+  "name": "smallapp",
+  "version": "1.0.0",
+  "description": "a small app to learn angularjs1.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kurianCoding/angular-smApp.git"
+  },
+  "keywords": [
+    "small",
+    "app",
+    "angularjs"
+  ],
+  "author": "kurianck.mail@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kurianCoding/angular-smApp/issues"
+  },
+  "homepage": "https://github.com/kurianCoding/angular-smApp#readme",
+  "devDependencies": {
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "jquery": "^3.1.1"
+  }
+}

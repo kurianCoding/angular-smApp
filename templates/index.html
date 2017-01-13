@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+    <head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href=node_modules/bootstrap/dist/css/bootstrap.min.css type="text/css" media="all">
+	<title>small app</title>
+    </head>
+    <body>
+	<div ng-controller="MyController">
+	    <input type="text" ng-model="expr" ng-maxlength=120></input>
+	    <div>{{comment}}</div>
+	<button  class="btn btn-success glyphicon glyphicon-plus" ng-click="AddFunc()"></button>
+	<button  class="btn btn-warning glyphicon glyphicon-minus" ng-click="SubtractFunc()"></button>
+	<span>{{count}}</span>
+	</div>
+    </body>
+	<!-- js -->
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="node_modules/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="js/app.js"> </script>	
+</html>
