@@ -7,13 +7,8 @@
 	<title>small app</title>
     </head>
     <body>
-	<div ng-controller="MyController">
-	    <input type="text" ng-model="expr" ng-maxlength=120></input>
-	    <div>{{comment}}</div>
-	<button  class="btn btn-success glyphicon glyphicon-plus" ng-click="AddFunc()"></button>
-	<button  class="btn btn-warning glyphicon glyphicon-minus" ng-click="SubtractFunc()"></button>
-	<span>{{count}}</span>
-	</div>
+	<my-counter></my-counter>
+	<my-counter></my-counter>
     </body>
 	<!-- js -->
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
