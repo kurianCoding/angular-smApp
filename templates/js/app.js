@@ -1,22 +1,9 @@
-angular.module('myApp',[]).controller('MyController',function ($scope,$parse){
-    $scope.count=0;
-    $scope.AddFunc=function(){
-	$scope.count=	$scope.count+1;
-    }
-    $scope.SubtractFunc=function(){
-	$scope.count=$scope.count-1;
-    }
-    $scope.$watch('expr',function(newVal,oldVal,$scope){
-	if(newVal!==oldVal){
-	    var parseFun=$parse(newVal);
-	    $scope.parsedValue = parseFun(newVal);
-	}
-    });
-}).directive('myCounter',function(){
+angular.module('myApp',[]).directive('myCounter',function(){
     return{
-	restrict:"E",
+	restrict:"EA",
 	replace:true,
 	scope:{},
+	require:'?ngModel',
 	controller:function($scope){
 	    $scope.count= 0;
 	    var update= function (count,increment){
@@ -31,10 +18,20 @@ angular.module('myApp',[]).controller('MyController',function ($scope,$parse){
 	    $scope.count=count;
 	    }
 	},
+	link: function(scope,elements,attrs,ngModel){
+	    if(!ngModel){
+		return;
+	    }
+	    ngModel.$render=function(){
+		return elements.html('<div>hello world</div>');
+	    }
+	   },
 	template:`<div>Counter {{count}}
 	    <button  class=\"btn btn-success glyphicon glyphicon-plus\" ng-click=\"AddFunc()\"></button>
 	    <button  class=\"btn btn-warning glyphicon glyphicon-minus\" ng-click=\"SubtractFunc()\"></button>
 </div>`
     }
+}).run(function($rootScope){
+    console.log("hello world");
 });
 angular.bootstrap(document,['myApp']);
