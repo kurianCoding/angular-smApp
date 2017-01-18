@@ -34,6 +34,8 @@ directive element.
 #### Scope of directive
 When directive is declared a scope is created along with it. This scope is shared between all same directive. We can make this scope isolated from other scopes of similar directives or it can inherit from root scope or parent scope.
 
+##### $uibModule
+using uibModule one can manipulate modals in angularjs. for using custom templates we should use ui-bootstrap-tpls.js and for readymade modal templates we should use ui-bootstrap.js
 
 ## Life Cycle of angular directive
 angular directives are complied and then linked. Before compliation directive exists as text/code. when compiling angular combines templates and values to render and html. Linking involves puttin this rendered html in the HTML DOM.

@@ -1,4 +1,4 @@
-angular.module('myApp',[])
+angular.module('myApp',['ui.bootstrap'])
     .directive("myCounter",function(){
      return{
 	 restrict:"EA",
@@ -30,11 +30,17 @@ angular.module('myApp',[])
 	 replace:true,
 	 transclude:true,
 	 scope: {},
-	 controller: function($scope){
+	 controller: function($uibModal,$scope){
+	     $scope.popupModal=function(){
+		 $uibModal.open({
+		     templateUrl:'comments/modal.tpl.html',
+		     scope:$scope,
+		 })
+	     }
 	     return;
 	 },
 	 template:`<div>
-	     <button class=\"btn btn-success\" onClick=\"popupModal()\" ng-transclude>
+	     <button class=\"btn btn-success\" ng-click=\"popupModal()\" ng-transclude>
 	     </button>
 	     </div>`,
     }
@@ -44,7 +50,3 @@ angular.module('myApp',[])
 });
 
 angular.bootstrap(document,['myApp']);
-
-function popupModal(){
-$('.modal').modal('show');
-}
