@@ -7,11 +7,19 @@
 	<title>small app</title>
     </head>
     <body>
-	<div my-counter></div>
-	<div my-counter></div>
-	<div my-counter></div>
-	<div my-counter></div>
-	<div my-counter></div>
+	<popup-btn>popup1</popup-btn>
+	<div id="pop1" class="modal fade" style="display:none;">
+	    <div class="modal-dialog" role="dialog">
+		<div class="modal-content">
+		    <div class="modal-header">
+		    <div class="modal-title"> HELLO WORLD</div>
+		</div>
+		<div class="modal-body">
+		    <my-counter></my-counter>
+		</div>
+		</div>
+	    </div>
+	</div>
     </body>
 	<!-- js -->
 	<script src="node_modules/jquery/dist/jquery.min.js"></script>
